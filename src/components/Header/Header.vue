@@ -1,0 +1,258 @@
+<script setup>
+import { onMounted, reactive, ref, computed } from "vue"
+import { useRouter } from "vue-router"
+import HeaderBtn from "@/components/Header/HeaderBtn.vue"
+import MobileNav from "@/components/Header/MobileNav.vue"
+import SubMenu from "@/components/Header/SubMenu.vue"
+import Mask from "@/components/Header/Mask.vue"
+
+import icon_free from '@/assets/images/icon/icon_free.svg'
+import icon_class from '@/assets/images/icon/icon_class.svg'
+import icon_info from '@/assets/images/icon/icon_info.svg'
+import img_header_1 from '@/assets/images/image/img_header_1.png'
+import img_header_2 from '@/assets/images/image/img_header_2.png'
+import img_header_3 from '@/assets/images/image/img_header_3.png'
+
+const router = useRouter()
+const isOpen = ref(false)
+const nowMenuIdx = ref(null)
+
+const topNavItems = [
+  {
+    icon: icon_free,
+    title: "免費體驗",
+    link: "#",
+  },
+  {
+
+    icon: icon_class,
+    title: "課程諮詢",
+    link: "#",
+  },
+  {
+
+    icon: icon_info,
+    title: "資料索取",
+    link: "#",
+  },
+]
+const nestNavItems = [
+  {
+    title: "關於明光義塾",
+    hasIcon: true,
+    hasBorder: false,
+    link: "",
+    picMenu: [
+      {
+        title: "明光義塾的教學理念",
+        pic: img_header_1,
+        link: "#"
+      },
+      {
+        title: "量身定做的教學方式",
+        pic: img_header_2,
+        link: "#"
+      },
+      {
+        title: "有助自助學習的原創教材",
+        pic: img_header_3,
+        link: "#"
+      },
+    ],
+    subMenu: [
+      {
+        title: "提升理解程度的教學筆記",
+        link: "#"
+      },
+      {
+        title: "最新公告",
+        link: "#"
+      },
+    ]
+  },
+  {
+    title: "個別指導課程",
+    hasIcon: true,
+    hasBorder: true,
+    link: "",
+    picMenu: [
+      {
+        title: "個別指導課程 - 1",
+        pic: img_header_3,
+        link: "#"
+      },
+      {
+        title: "個別指導課程 - 2",
+        pic: img_header_2,
+        link: "#"
+      },
+    ],
+    subMenu: [
+      {
+        title: "個別指導課程 - 3",
+        link: "#"
+      },
+      {
+        title: "個別指導課程 - 4",
+        link: "#"
+      },
+    ]
+  },
+  {
+    title: "教室資訊",
+    hasIcon: true,
+    hasBorder: true,
+    link: "",
+    picMenu: [
+      {
+        title: "個別指導課程 - 1",
+        pic: img_header_2,
+        link: "#"
+      },
+    ],
+    subMenu: [
+      {
+        title: "個別指導課程 - 2",
+        link: "#"
+      },
+      {
+        title: "個別指導課程 - 3",
+        link: "#"
+      },
+    ]
+  },
+  {
+    title: "常見問題",
+    hasIcon: false,
+    hasBorder: true,
+    link: "QA",
+    picMenu: [],
+    subMenu: []
+  },
+]
+
+const nowMenuItem = computed(() => {
+  if (nowMenuIdx.value === null) return null
+  return nestNavItems[nowMenuIdx.value]
+})
+
+function toggleNav() {
+  isOpen.value = !isOpen.value
+}
+
+function clickMask() {
+  isOpen.value = false
+}
+
+function menuTrigger(idx) {
+  if (idx === nowMenuIdx.value) {
+    return nowMenuIdx.value = null
+  }
+  
+  nowMenuIdx.value = idx
+
+  if (nowMenuItem.value && nowMenuItem.value.link) {
+    return router.push({ path: nowMenuItem.value.link })
+  }
+}
+
+</script>
+<template>
+  <header>
+    <!-- header-top -->
+    <div class="container flex flex-wrap lg:flex-nowrap lg:items-center lg:justify-between px-4 xl:px-[88px] py-2">
+      <!-- 左側 -->
+      <div class="flex flex-col sm:flex-row w-[100%] lg:w-auto items-center justify-center">
+        <!-- logo -->
+        <div href="#" class="flex justify-between items-center w-full mb-2 sm:mb-0 sm:w-auto">
+          <a href="#" class="block">
+            <div class="grid grid-cols-6 gap-[3px]">
+              <div class="grid grid-cols-2 grid-rows-2 w-[32px] h-[32px] sm:w-[40px] sm:h-[40px] gap-[2px]">
+                <div class="logo-box bg-edu-yellow w-[15px] h-[15px] sm:w-[20px] sm:h-[20px]">
+                  <div class="w-[10px]">
+                    <img src="@/assets/images/icon/logo_words/logoword_ge.svg" alt="個">
+                  </div>
+                </div>
+                <div class="logo-box bg-edu-yellow w-[15px] h-[15px] sm:w-[20px] sm:h-[20px]">
+                  <div class="w-[10px]">
+                    <img src="@/assets/images/icon/logo_words/logoword_bie.svg" alt="別">
+                  </div>
+                </div>
+                <div class="logo-box bg-edu-yellow w-[15px] h-[15px] sm:w-[20px] sm:h-[20px]">
+                  <div class="w-[10px]">
+                    <img src="@/assets/images/icon/logo_words/logoword_zhi.svg" alt="指">
+                  </div>
+                </div>
+                <div class="logo-box bg-edu-yellow w-[15px] h-[15px] sm:w-[20px] sm:h-[20px]">
+                  <div class="w-[10px]">
+                    <img src="@/assets/images/icon/logo_words/logoword_dao.svg" alt="導">
+                  </div>
+                </div>
+              </div>
+              <div class="logo-box bg-edu-yellow w-[32px] h-[32px] sm:w-[40px] sm:h-[40px]">
+                <div class="w-[20px]">
+                  <img src="@/assets/images/icon/logo_words/logoword_ming.svg" alt="明">
+                </div>
+              </div>
+              <div class="logo-box bg-edu-yellow w-[32px] h-[32px] sm:w-[40px] sm:h-[40px]">
+                <div class="w-[20px]">
+                  <img src="@/assets/images/icon/logo_words/logoword_guang.svg" alt="光">
+                </div>
+              </div>
+              <div class="logo-box bg-edu-yellow w-[32px] h-[32px] sm:w-[40px] sm:h-[40px]">
+                <div class="w-[20px]">
+                  <img src="@/assets/images/icon/logo_words/logoword_yi.svg" alt="義">
+                </div>
+              </div>
+              <div class="logo-box bg-edu-yellow w-[32px] h-[32px] sm:w-[40px] sm:h-[40px]">
+                <div class="w-[20px]">
+                  <img src="@/assets/images/icon/logo_words/logoword_shu.svg" alt="塾">
+                </div>
+              </div>
+              <div class="logo-box bg-edu-blue w-[32px] h-[32px] sm:w-[40px] sm:h-[40px]">
+                <div class="w-[8px]">
+                  <img src="@/assets/images/icon/logo_words/logoword_surprise.svg" alt="!">
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <p class="hidden text-base lg:text-xl text-edu-blue sm:block sm:pl-3.5">台灣市佔第一個別指導補習班</p>
+      </div>
+      <!-- 右側 -->
+      <div class="hidden w-[100%] lg:w-auto items-center justify-center mt-4 mb-4 lg:mt-0 lg:mb-0 sm:flex">
+        <a href="#" class="nav-item-top" v-for="(item, idx) in topNavItems" :key="idx">
+          <div class="h-[26px] mr-[5px]"><img class="block h-full" :src="item.icon" alt="課程諮詢">
+          </div>
+          <p class="text-edu-blue text-base lg:text-lg">{{ item.title }}</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- header-bottom-nav -->
+    <div class="hidden bg-edu-bg sm:block">
+      <div class="container flex">
+        <HeaderBtn v-for="(item, idx) in nestNavItems" :key="idx" 
+          :hasBorder="item.hasBorder" 
+          :hasArrow="item.hasIcon" 
+          :active="idx === nowMenuIdx"
+          @click="menuTrigger(idx)">
+          {{ item.title }}</HeaderBtn>
+      </div>
+    </div>
+
+    <!-- header-botom-nav-menu -->
+    <SubMenu :nowMenuItem="nowMenuItem"></SubMenu>
+  </header>
+  <!-- burger-menu -->
+  <button @click="toggleNav" class="sm:hidden fixed top-[12px] right-[20px] z-20">menu</button>
+  <!-- mobile-menu -->
+  <MobileNav :isOpen="isOpen" :topNavItems="topNavItems" :nestNavItems="nestNavItems"></MobileNav>
+  <Mask :isOpen="isOpen" @click="clickMask"></Mask>
+</template>
+
+<style scoped>
+.menu-open {
+  display: block;
+}
+</style>
