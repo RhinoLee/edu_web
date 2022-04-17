@@ -2,30 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --edu-yellow: #fff100;
+  --edu-blue: #0081cc;
+  --edu-bg: #f6f6f6;
+  --edu-text: #1e1e1e;
+  --edu-boder: #dadada;
+  --edu-mask: rgba(0, 0, 0, 0.7);
+}
+
 @font-face {
   font-family: "NOTO-R";
-  src: url("@/assets/fonts/NotoSerifTC-Regular.otf")
+  src: url("@/assets/fonts/NotoSerifTC-Regular.otf");
 }
 @font-face {
   font-family: "NOTO-B";
-  src: url("@/assets/fonts/NotoSerifTC-Bold.otf")
+  src: url("@/assets/fonts/NotoSerifTC-Bold.otf");
 }
 
 @layer base {
   html {
-    font-family: NOTO-R
+    font-family: NOTO-R;
   }
 }
 
 @layer components {
   .container {
-    @apply max-w-[100%] 2xl:max-w-[1200px] mx-auto
+    @apply max-w-[100%] 2xl:max-w-[1200px] mx-auto;
   }
   .logo-box {
-    @apply flex justify-center items-center rounded
+    @apply flex justify-center items-center rounded;
   }
   .nav-item-top {
     @apply flex items-center px-3.5 py-2.5 mr-6 hover:bg-edu-yellow relative
-    after:content-[''] after:absolute after:left-2 after:right-2 after:bottom-0 after:block after:w-full after:h-[5px] after:bg-border-bottom after:bg-no-repeat
+    after:content-[''] after:absolute after:left-2 after:right-2 after:bottom-0 after:block after:w-full after:h-[5px] after:bg-border-bottom after:bg-no-repeat;
+  }
+}
+
+/* swiper */
+.swiper-pagination-bullet {
+  background: var(--edu-yellow);
+  opacity: 1;
+}
+@media (min-width: 992px) {
+  .swiper-pagination-bullet {
+    display: block;
+    width: 12px;
+    height: 12px;
+  }
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--edu-blue);
+}
+
+@media (min-width: 992px) {
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 50%;
+    transform: translateY(50%);
+    left: auto;
+    right: 100px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 6px 0;
   }
 }
