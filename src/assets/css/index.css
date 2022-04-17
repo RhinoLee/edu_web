@@ -28,7 +28,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[100%] 2xl:max-w-[1200px] mx-auto;
+    @apply max-w-[100%] md:max-w-[90%] 2xl:max-w-[1200px] mx-auto pl-6 pr-6;
   }
   .logo-box {
     @apply flex justify-center items-center rounded;

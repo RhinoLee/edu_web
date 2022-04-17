@@ -19,7 +19,8 @@ module.exports = {
         "border-bottom": "url('@/assets/images/icon/headericon_line.svg')"
       },
       screens: {
-        "xs": "360px"
+        "xs": "360px",
+        "tablet": "992px",
       }
     },
   },
