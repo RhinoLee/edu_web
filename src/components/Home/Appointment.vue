@@ -1,0 +1,46 @@
+<template>
+  <div class="mb-[74px]">
+    <div class="container">
+      <div
+        class="relative flex flex-wrap justify-center items-center w-full border-2 border-edu-blue rounded-md pt-[24px] pb-[24px] pl-[22px] pr-[22px] xl:pl-[32px] xl:pr-[32px] shadow-md">
+        <div class="w-[100%] lg:w-[30%] flex items-center">
+          <div class="relative w-[82px]">
+            <div class="absolute w-[82px] left-0 -top-[130px] lg:-top-[100px]"><img class="w-full" src="@/assets/images/image/img_reserve.svg" alt=""></div>
+          </div>
+          <h3
+            class="pl-[25px] text-sm text-edu-blue fonr-bold text-right sm:text-base xl:text-lg">
+            立即線上預約！</h3>
+        </div>
+        <div class="w-[100%] lg:w-[70%] grid grid-cols-1 gap-y-[18px] md:grid-cols-3 md:gap-y-0 gap-x-[22px] mt-[20px] lg:mt-0 lg:flex-1">
+          <div>
+            <a href="#"
+              class="flex justify-center items-center px-[38px] py-[20px] border border-edu-blue rounded hover:bg-edu-yellow">
+              <div class="h-[26px] mr-[5px]"><img class="block h-full" src="@/assets/images/icon/icon_free.svg"
+                  alt="免費體驗">
+              </div>
+              <p class="text-edu-blue text-base xl:text-lg">免費體驗</p>
+            </a>
+          </div>
+          <div>
+            <a href="#"
+              class="flex justify-center items-center px-[38px] py-[20px] border border-edu-blue rounded hover:bg-edu-yellow">
+              <div class="h-[26px] mr-[5px]"><img class="block h-full" src="@/assets/images/icon/icon_class.svg"
+                  alt="課程諮詢">
+              </div>
+              <p class="text-edu-blue text-base xl:text-lg">課程諮詢</p>
+            </a>
+          </div>
+          <div>
+            <a href="#"
+              class="flex justify-center items-center px-[38px] py-[20px] border border-edu-blue rounded hover:bg-edu-yellow">
+              <div class="h-[26px] mr-[5px]"><img class="block h-full" src="@/assets/images/icon/icon_info.svg"
+                  alt="資料索取">
+              </div>
+              <p class="text-edu-blue text-base xl:text-lg">資料索取</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
