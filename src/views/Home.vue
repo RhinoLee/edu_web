@@ -6,6 +6,7 @@ import Location from "@/components/Home/Location.vue"
 import CourseInfo from "@/components/Home/CourseInfo.vue"
 import Growing from "@/components/Home/Growing.vue"
 import Appointment from "@/components/Home/Appointment.vue"
+import News from "@/components/Home/News.vue"
 </script>
 
 <template>
@@ -16,4 +17,5 @@ import Appointment from "@/components/Home/Appointment.vue"
   <CourseInfo></CourseInfo>
   <Growing></Growing>
   <Appointment></Appointment>
+  <News></News>
 </template>
