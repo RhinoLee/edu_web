@@ -18,6 +18,7 @@ module.exports = {
       backgroundImage: {
         "border-bottom": "url('@/assets/images/icon/headericon_line.svg')",
         "select-arrow": "url('@/assets/images/icon/icon_arrow.svg')",
+        "growing": "url('@/assets/images/image/img_up_bg.png')"
       },
       screens: {
         "xs": "360px",

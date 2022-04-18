@@ -4,6 +4,7 @@ import Courses from "@/components/Home/Courses.vue"
 import Admissions from "@/components/Home/Admissions.vue"
 import Location from "@/components/Home/Location.vue"
 import CourseInfo from "@/components/Home/CourseInfo.vue"
+import Growing from "@/components/Home/Growing.vue"
 </script>
 
 <template>
@@ -12,4 +13,5 @@ import CourseInfo from "@/components/Home/CourseInfo.vue"
   <Admissions></Admissions>
   <Location></Location>
   <CourseInfo></CourseInfo>
+  <Growing></Growing>
 </template>

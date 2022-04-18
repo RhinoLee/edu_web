@@ -1,6 +1,4 @@
 <script setup>
-import H2 from "@/components/StyleUtils/Title.vue"
-import icon_books from "@/assets/images/image/img_books.svg"
 import icon_person_1 from "@/assets/images/image/img_here.svg"
 import icon_person_2 from "@/assets/images/image/img_middle.svg"
 const courses = [
@@ -24,14 +22,14 @@ const courses = [
 
 <template>
   <div class="pt-[73px] pb-[76px]">
-    <div class="container"> 
-      <div class="mb-[40px]">
-        <H2 title="個別指導課程" :icon="icon_books"></H2>
+    <div class="container">
+      <div class="flex items-center justify-center mb-[40px]">
+        <h2 class="h2">個別指導課程</h2>
+        <div class="ml-[15px]"><img src="@/assets/images/image/img_books.svg"></div>
       </div>
 
       <div class="grid sm:grid-cols-2 tablet:grid-cols-3 gap-x-4 gap-y-4">
-        <div v-for="(course, idx) in courses" :key="idx" 
-          class="flex items-center bg-edu-bg py-4 px-7 lg:py-6 xl:px-10">
+        <div v-for="(course, idx) in courses" :key="idx" class="flex items-center bg-edu-bg py-4 px-7 lg:py-6 xl:px-10">
           <div class="w-[45px] lg:w-[60px] xl:w-[80px] mr-[14px] lg:mr-[26px]">
             <img :src="course.icon" alt="">
           </div>

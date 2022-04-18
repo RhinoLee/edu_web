@@ -1,5 +1,4 @@
 <script setup>
-import H2 from "@/components/StyleUtils/Title.vue"
 import img_teach_1 from "@/assets/images/image/img_teach_1.png"
 import img_teach_2 from "@/assets/images/image/img_teach_2.png"
 import img_teach_3 from "@/assets/images/image/img_teach_3.png"
@@ -30,8 +29,8 @@ const courseInfos = [
 <template>
   <div class="py-[70px]">
     <div class="container">
-      <div class="mb-[40px]">
-        <H2 title="60年的教學經驗，造就出真正的個別指導。" icon=""></H2>
+      <div class="flex items-center justify-center mb-[40px]">
+        <h2 class="h2">60年的教學經驗，造就出真正的個別指導。</h2>
       </div>
 
       <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 lg:gap-y-0">

@@ -27,6 +27,9 @@
 }
 
 @layer components {
+  .h2 {
+    @apply font-bold text-xl md:text-2xl lg:text-3xl text-edu-blue
+  }
   .container {
     @apply max-w-[100%] md:max-w-[90%] 2xl:max-w-[1200px] mx-auto px-6 md:px-0;
   }
