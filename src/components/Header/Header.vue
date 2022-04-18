@@ -160,7 +160,7 @@ function menuTrigger(idx) {
 <template>
   <header>
     <!-- header-top -->
-    <div class="container flex flex-wrap lg:flex-nowrap lg:items-center lg:justify-between px-4 xl:px-[88px] py-2">
+    <div class="container flex flex-wrap lg:flex-nowrap lg:items-center lg:justify-between xl:px-[88px] py-2">
       <!-- 左側 -->
       <div class="flex flex-col sm:flex-row w-[100%] lg:w-auto items-center justify-center">
         <!-- logo -->
@@ -217,14 +217,14 @@ function menuTrigger(idx) {
             </div>
           </a>
         </div>
-        <p class="hidden text-base lg:text-xl text-edu-blue sm:block sm:pl-3.5">台灣市佔第一個別指導補習班</p>
+        <p class="hidden text-base xl:text-lg text-edu-blue sm:block sm:pl-3.5">台灣市佔第一個別指導補習班</p>
       </div>
       <!-- 右側 -->
       <div class="hidden w-[100%] lg:w-auto items-center justify-center mt-4 mb-4 lg:mt-0 lg:mb-0 sm:flex">
         <a href="#" class="nav-item-top" v-for="(item, idx) in topNavItems" :key="idx">
           <div class="h-[26px] mr-[5px]"><img class="block h-full" :src="item.icon" alt="課程諮詢">
           </div>
-          <p class="text-edu-blue text-base lg:text-lg">{{ item.title }}</p>
+          <p class="text-edu-blue text-base xl:text-lg">{{ item.title }}</p>
         </a>
       </div>
     </div>

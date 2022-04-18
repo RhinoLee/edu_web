@@ -16,7 +16,8 @@ module.exports = {
         "edu-mask": "var(--edu-mask)",
       },
       backgroundImage: {
-        "border-bottom": "url('@/assets/images/icon/headericon_line.svg')"
+        "border-bottom": "url('@/assets/images/icon/headericon_line.svg')",
+        "select-arrow": "url('@/assets/images/icon/icon_arrow.svg')",
       },
       screens: {
         "xs": "360px",
