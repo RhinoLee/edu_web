@@ -16,27 +16,28 @@ const props = defineProps({
 })
 
 const activeStyle = reactive({ style: {} })
+let timeout = null
 
 function buttonEnter(e) {
-
+  clearTimeout(timeout)
   activeStyle.style = {}
 
-  const enterX = Math.round((e.layerX / e.target.offsetWidth) * 100)
-  const enterY = Math.round((e.layerY / e.target.offsetHeight) * 100)
-
-  setTimeout(() => {
+  const enterX = Math.round((e.offsetX / e.target.offsetWidth) * 100)
+  const enterY = Math.round((e.offsetY / e.target.offsetHeight) * 100)
+  
+  timeout = setTimeout(() => {
     activeStyle.style = {
       width: "600px",
       height: "600px",
       left: enterX + '%',
       top: enterY + '%',
     }
-  }, 10)
+  }, 5)
 }
 
 function buttonLeave(e) {
-  const leaveX = Math.round((e.layerX / e.target.offsetWidth) * 100)
-  const leaveY = Math.round((e.layerY / e.target.offsetHeight) * 100)
+  const leaveX = Math.round((e.offsetX / e.target.offsetWidth) * 100)
+  const leaveY = Math.round((e.offsetY / e.target.offsetHeight) * 100)
 
   activeStyle.style = {
     width: "0px",
@@ -68,7 +69,7 @@ function buttonLeave(e) {
     ">
     <slot></slot>
     <div
-      class="absolute block w-0 h-0 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 bg-edu-yellow z-[-1] rounded-full"
+      class="absolute block w-0 h-0 -translate-x-1/2 -translate-y-1/2 transition-all duration-400 bg-edu-yellow z-[-1] rounded-full"
       :style="activeStyle.style">
     </div>
   </a>
