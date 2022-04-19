@@ -149,45 +149,48 @@ function menuTrigger(idx) {
   if (idx === nowMenuIdx.value) {
     return nowMenuIdx.value = null
   }
-  
+
   nowMenuIdx.value = idx
 
+  // 只有單層，無 submenu
   if (nowMenuItem.value && nowMenuItem.value.link) {
-    return router.push({ path: nowMenuItem.value.link })
+    router.push({ path: nowMenuItem.value.link })
+    return nowMenuIdx.value = null
   }
 }
 
 </script>
 <template>
-  <header>
+  <header class="relative bg-white">
     <!-- header-top -->
-    <div class="container flex flex-wrap lg:flex-nowrap lg:items-center lg:justify-between xl:px-[88px] py-2">
-      <!-- 左側 -->
-      <div class="flex flex-col sm:flex-row w-[100%] lg:w-auto items-center justify-center">
-        <!-- logo -->
-        <div href="#" class="flex justify-between items-center w-full mb-2 sm:mb-0 sm:w-auto">
-          <Logo></Logo>
-        </div>
-        <p class="hidden text-base xl:text-lg text-edu-blue sm:block sm:pl-3.5">台灣市佔第一個別指導補習班</p>
-      </div>
-      <!-- 右側 -->
-      <div class="hidden w-[100%] lg:w-auto items-center justify-center mt-4 mb-4 lg:mt-0 lg:mb-0 sm:flex">
-        <a href="#" class="nav-item-top" v-for="(item, idx) in topNavItems" :key="idx">
-          <div class="h-[26px] mr-[5px]"><img class="block h-full" :src="item.icon" alt="課程諮詢">
+    <div
+      class="relative z-20 bg-white">
+      <div class="container flex flex-wrap lg:flex-nowrap lg:items-center lg:justify-between xl:px-[88px] py-2">
+        <!-- 左側 -->
+        <div class="flex flex-col sm:flex-row w-[100%] lg:w-auto items-center justify-center">
+          <!-- logo -->
+          <div href="#" class="flex justify-between items-center w-full mb-2 sm:mb-0 sm:w-auto">
+            <Logo></Logo>
           </div>
-          <p class="text-edu-blue text-base xl:text-lg">{{ item.title }}</p>
-        </a>
+          <p class="hidden text-base xl:text-lg text-edu-blue sm:block sm:pl-3.5">台灣市佔第一個別指導補習班</p>
+        </div>
+        <!-- 右側 -->
+        <div class="hidden w-[100%] lg:w-auto items-center justify-center mt-4 mb-4 lg:mt-0 lg:mb-0 sm:flex">
+          <a href="#" class="nav-item-top" v-for="(item, idx) in topNavItems" :key="idx">
+            <div class="h-[26px] mr-[5px]"><img class="block h-full" :src="item.icon" alt="課程諮詢">
+            </div>
+            <p class="text-edu-blue text-base xl:text-lg">{{ item.title }}</p>
+          </a>
+        </div>
       </div>
+
     </div>
 
     <!-- header-bottom-nav -->
-    <div class="hidden bg-edu-bg sm:block">
+    <div class="relative hidden bg-edu-bg sm:block z-20">
       <div class="container flex">
-        <HeaderBtn v-for="(item, idx) in nestNavItems" :key="idx" 
-          :hasBorder="item.hasBorder" 
-          :hasArrow="item.hasIcon" 
-          :active="idx === nowMenuIdx"
-          @click="menuTrigger(idx)">
+        <HeaderBtn v-for="(item, idx) in nestNavItems" :key="idx" :hasBorder="item.hasBorder" :hasArrow="item.hasIcon"
+          :active="idx === nowMenuIdx" @click="menuTrigger(idx)">
           {{ item.title }}</HeaderBtn>
       </div>
     </div>
@@ -201,9 +204,3 @@ function menuTrigger(idx) {
   <MobileNav :isOpen="isOpen" :topNavItems="topNavItems" :nestNavItems="nestNavItems"></MobileNav>
   <Mask :isOpen="isOpen" @click="clickMask"></Mask>
 </template>
-
-<style scoped>
-.menu-open {
-  display: block;
-}
-</style>

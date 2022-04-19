@@ -40,7 +40,6 @@ function menuTrigger(idx) {
   <nav :class="{ 'nav-open': isOpen }"
     class="absolute top-0 -left-[260px] w-[260px] xs:-left-[300px] xs:w-[300px] h-screen pt-6 bg-edu-bg sm:hidden transition-all duration-700 z-20">
     <ul>
-
       <li v-for="(item, idx) in topNavItems" :key="idx">
         <a :href="item.link" class="nav-item-top">
           <div class="w-[20px] mr-[5px]">
