@@ -1,4 +1,5 @@
 <script setup>
+import LinkButton from "@/components/Common/LinkButton.vue"
 const newsList = [
   {
     date: "2022-10-22",
@@ -42,7 +43,7 @@ const newsList = [
     </div>
 
     <div class="flex justify-center items-center">
-      <a href="#" class="inline-block px-[35px] py-[12px] border border-edu-blue rounded text-edu-blue hover:bg-edu-yellow">公告一覽</a>
+      <LinkButton :btnClass="['px-[35px]', 'py-[12px]']" btnLink="#">公告一覽</LinkButton>
     </div>
   </div>
 </template>

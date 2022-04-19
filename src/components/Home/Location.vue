@@ -1,3 +1,6 @@
+<script setup>
+import LinkButton from "@/components/Common/LinkButton.vue"
+</script>
 <template>
   <div class="pt-[70px]">
     <div class="container">
@@ -26,8 +29,8 @@
               <option value="">區域</option>
             </select>
           </div>
-          <div class="w-[100%] sm:w-[12%] sm:ml-[14px]">
-            <button class="w-[100%] mt-[20px] px-[16px] py-[16px] sm:mt-0 sm:px-[20px] sm:py-[20px] border border-edu-blue rounded">GO!</button>
+          <div class="w-[100%] sm:w-[12%] sm:ml-[14px] text-center">
+            <LinkButton :btnClass="['w-full', 'mt-[20px]', 'px-[16px]', 'py-[16px]', 'sm:mt-0', 'sm:px-[20px]', 'sm:py-[20px]']" btnLink="#">GO!</LinkButton>
           </div>
         </div>
       </div>
