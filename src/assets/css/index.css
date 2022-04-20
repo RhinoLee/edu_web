@@ -12,17 +12,24 @@
 }
 
 @font-face {
+  font-family: "jf-jinxuanlatte";
+}
+@font-face {
+  font-family: "jf-jinxuanlatte";
+}
+/* @font-face {
   font-family: "NOTO-R";
   src: url("@/assets/fonts/NotoSerifTC-Regular.otf");
 }
 @font-face {
   font-family: "NOTO-B";
   src: url("@/assets/fonts/NotoSerifTC-Bold.otf");
-}
+} */
 
 @layer base {
   html {
-    font-family: NOTO-R;
+    font-family: jf-jinxuanlatte;
+    /* font-family: NOTO-R; */
   }
 }
 
@@ -37,7 +44,7 @@
     @apply flex justify-center items-center rounded;
   }
   .nav-item-top {
-    @apply flex items-center px-3.5 py-2.5 mr-6 hover:bg-edu-yellow relative
+    @apply flex items-center px-3.5 py-2.5 mr-6 sm:hover:bg-edu-yellow relative
     after:content-[''] after:absolute after:left-2 after:right-2 after:bottom-0 after:block after:w-full after:h-[5px] after:bg-border-bottom after:bg-no-repeat;
   }
   .select-arrow {

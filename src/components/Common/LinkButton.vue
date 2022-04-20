@@ -27,8 +27,8 @@ function buttonEnter(e) {
 
   timeout = setTimeout(() => {
     activeStyle.style = {
-      width: "600px",
-      height: "600px",
+      width: "1200px",
+      height: "1200px",
       left: enterX + '%',
       top: enterY + '%',
     }
@@ -51,7 +51,7 @@ function buttonLeave(e) {
 <template>
   <!-- with icon -->
   <a v-if="icon" @mouseenter="buttonEnter" @mouseleave="buttonLeave" :href="btnLink" :class="btnClass"
-    class="relative flex justify-center items-center border border-edu-blue rounded overflow-hidden z-10">
+    class="relative flex justify-center items-center border border-edu-blue rounded overflow-hidden z-10 tracking-widest">
     <div :class="iconClass"><img class="block h-full" :src="icon">
     </div>
     <p class="text-edu-blue text-base xl:text-lg">
@@ -64,9 +64,9 @@ function buttonLeave(e) {
   </a>
 
   <!-- without icon -->
-  <a v-else @mouseenter="buttonEnter" @mouseleave="buttonLeave" :href="btnLink" :class="btnClass" class="relative inline-block border border-edu-blue rounded text-edu-blue overflow-hidden z-10
-    
-    ">
+  <a v-else @mouseenter="buttonEnter" @mouseleave="buttonLeave" :href="btnLink" :class="btnClass" 
+  class="relative inline-block border border-edu-blue rounded text-edu-blue bg-white overflow-hidden z-10  tracking-widest
+  ">
     <slot></slot>
     <div
       class="absolute block w-0 h-0 -translate-x-1/2 -translate-y-1/2 transition-all duration-500 bg-edu-yellow z-[-1] rounded-full"

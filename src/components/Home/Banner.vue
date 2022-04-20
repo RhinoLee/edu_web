@@ -9,19 +9,20 @@ import 'swiper/css/pagination';
 <template>
   <swiper :modules="[Pagination]" :slides-per-view="1" :pagination="{ clickable: true }">
     <swiper-slide>
-      <div>
-        <img class="w-full" src="@/assets/images/image/banner.png" alt="">
+      <div class="2xl:max-h-[500px]">
+        <img class="w-full 2xl:h-full 2xl:object-cover" src="@/assets/images/image/banner.png" alt="">
       </div>
     </swiper-slide>
     <swiper-slide>
-      <div>
-        <img class="w-full" src="@/assets/images/image/banner.png" alt="">
+      <div class="2xl:max-h-[500px]">
+        <img class="w-full 2xl:h-full 2xl:object-cover" src="@/assets/images/image/banner.png" alt="">
       </div>
     </swiper-slide>
     <swiper-slide>
-      <div>
-        <img class="w-full" src="@/assets/images/image/banner.png" alt="">
+      <div class="2xl:max-h-[500px]">
+        <img class="w-full 2xl:h-full 2xl:object-cover" src="@/assets/images/image/banner.png" alt="">
       </div>
     </swiper-slide>
   </swiper>
+
 </template>

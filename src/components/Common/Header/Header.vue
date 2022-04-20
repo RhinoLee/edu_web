@@ -126,7 +126,7 @@ const nestNavItems = [
     title: "常見問題",
     hasIcon: false,
     hasBorder: true,
-    link: "QA",
+    link: "#",
     picMenu: [],
     subMenu: []
   },
@@ -165,7 +165,7 @@ function menuTrigger(idx) {
     <!-- header-top -->
     <div
       class="relative z-20 bg-white">
-      <div class="container flex flex-wrap lg:flex-nowrap lg:items-center lg:justify-between xl:px-[88px] py-2">
+      <div class=" flex flex-wrap py-2 max-w-[90%] mx-auto lg:flex-nowrap lg:items-center lg:justify-between 2xl:px-[80px] 2xl:max-w-[1200px]">
         <!-- 左側 -->
         <div class="flex flex-col sm:flex-row w-[100%] lg:w-auto items-center justify-center">
           <!-- logo -->
@@ -187,7 +187,7 @@ function menuTrigger(idx) {
     </div>
 
     <!-- header-bottom-nav -->
-    <div class="relative hidden bg-edu-bg sm:block z-20">
+    <div class="relative hidden bg-edu-bg shadow:xl z-20 sm:block">
       <div class="container flex">
         <HeaderBtn v-for="(item, idx) in nestNavItems" :key="idx" :hasBorder="item.hasBorder" :hasArrow="item.hasIcon"
           :active="idx === nowMenuIdx" @click="menuTrigger(idx)">
@@ -199,7 +199,7 @@ function menuTrigger(idx) {
     <SubMenu :nowMenuItem="nowMenuItem"></SubMenu>
   </header>
   <!-- burger-menu -->
-  <button @click="toggleNav" class="sm:hidden fixed top-[12px] right-[20px] z-20">menu</button>
+  <button @click="toggleNav" class="sm:hidden absolute top-[12px] right-[20px] z-20">menu</button>
   <!-- mobile-menu -->
   <MobileNav :isOpen="isOpen" :topNavItems="topNavItems" :nestNavItems="nestNavItems"></MobileNav>
   <Mask :isOpen="isOpen" @click="clickMask"></Mask>

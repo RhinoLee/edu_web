@@ -5,7 +5,7 @@ import icon_class from "@/assets/images/icon/icon_class.svg"
 import icon_info from "@/assets/images/icon/icon_info.svg"
 </script>
 <template>
-  <div class="mb-[74px]">
+  <div class="mb-[74px] pt-[40px] lg:pt-0">
     <div class="container">
       <div
         class="relative flex flex-wrap justify-center items-center w-full border-2 border-edu-blue rounded-md pt-[24px] pb-[24px] pl-[22px] pr-[22px] xl:pl-[32px] xl:pr-[32px] shadow-md">
@@ -14,7 +14,7 @@ import icon_info from "@/assets/images/icon/icon_info.svg"
             <div class="absolute w-[82px] left-0 -top-[130px] lg:-top-[100px]"><img class="w-full"
                 src="@/assets/images/image/img_reserve.svg" alt=""></div>
           </div>
-          <h3 class="pl-[25px] text-sm text-edu-blue fonr-bold text-right sm:text-base xl:text-lg">
+          <h3 class="pl-[25px] text-md text-center text-edu-blue font-bold tracking-wider sm:text-lg xl:text-xl">
             立即線上預約！</h3>
         </div>
         <div

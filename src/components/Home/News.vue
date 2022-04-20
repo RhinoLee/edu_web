@@ -25,7 +25,7 @@ const newsList = [
         <div class="tablet:col-start-2 tablet:col-span-3 bg-edu-bg">
           <ul class="py-[18px] px-[22px] lg:py-[25px] lg:px-[53px]">
             <li v-for="(news, idx) in newsList" :key="idx" class="py-[7px]">
-              <a href="#" class="flex flex-col sm:flex-row sm:items-center group">
+              <a href="#" class="flex flex-col md:tracking-widest sm:flex-row sm:items-center group">
                 <span class="block text-edu-blue relative pb-[1px]
                 sm:group-hover:after:block sm:group-hover:after:absolute sm:group-hover:after:left-0 sm:group-hover:after:bottom-0 sm:group-hover:after:w-full sm:group-hover:after:h-[1px] sm:group-hover:after:bg-[#323232]
                 ">{{ news.date }}</span>
@@ -36,7 +36,7 @@ const newsList = [
             </li>
           </ul>
         </div>
-        <div class="w-82px absolute -right-[20px] bottom-[5px]">
+        <div class="w-82px absolute right-[10px] -bottom-[25px] md:-right-[20px] md:bottom-[5px]">
           <img class="w-full" src="@/assets/images/image/img_news.svg" alt="">
         </div>
       </div>

@@ -42,9 +42,11 @@ const footerNav = [
       </div>
       <div>
         <ul class="flex flex-col justify-center mx-auto md:flex-row">
-          <li v-for="(item, idx) in footerNav" :key="idx" class="flex justify-center items-center px-[10px] py-[5px] lg:px-[20px] md:py-0">
+          <li v-for="(item, idx) in footerNav" :key="idx" 
+          class="flex justify-center items-center px-[10px] py-[5px] md:border-r md:border-edu-yellow md:last:border-none lg:px-[20px] md:py-0
+          ">
             <div class="mr-[6px] lg:mr-[12px] h-[16px] lg:h-[20px]"><img class="h-full" :src="item.icon" alt=""></div>
-            <a class="relative block pb-[1px] lg:text-lg text-edu-blue
+            <a class="relative block pb-[1px] tracking-wider text-edu-blue lg:text-lg hover:font-bold
             hover:after:block hover:after:absolute hover:after:left-0 hover:after:bottom-0 hover:after:w-full hover:after:h-[1px] hover:after:bg-[#323232]
             " 
             :href="item.link">
@@ -60,7 +62,7 @@ const footerNav = [
     </div>
     <!-- copyright -->
     <div class="bg-edu-blue text-center">
-      <p class="text-white text-sm py-[8px]">Copyright &copy; 明光義塾 All Rights reservrd.</p>
+      <p class="text-white text-sm py-[8px] tracking-wider">Copyright &copy; 明光義塾 All Rights reservrd.</p>
     </div>
   </div>
 </template>
